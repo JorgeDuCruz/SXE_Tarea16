@@ -1,19 +1,23 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="partner_chinese_stats.list">
-      <field name="name">partner_chinese_stats list</field>
-      <field name="model">partner_chinese_stats.partner_chinese_stats</field>
+    <!-- explicit form view definition -->
+
+    <record model="ir.ui.view" id="partner_chinese_stats.form">
+      <field name="name">partner_chinese_stats form</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref = "base.view_partner_form"/>
       <field name="arch" type="xml">
-        <list>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </list>
+          <xpath expr ="//notebook" position="inside">
+              <page string="Signo Chino">
+                  <group>
+                      <field name="f_nac" string = "Fecha de nacimiento"/>
+                      <field name="edad" string = "Edad"/>
+                      <field name="signo_chino" string = "Signo del horóscopo chino"/>
+                  </group>
+              </page>
+          </xpath>
       </field>
     </record>
--->
 
     <!-- actions opening views on models -->
 <!--

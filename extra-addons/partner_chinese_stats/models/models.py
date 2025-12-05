@@ -15,9 +15,9 @@ class partner_chinese_stats(models.Model):
      def _calcular_edad(self):
          for record in self:
              if record.f_nac:
-                 fecha_actual = datetime.datetime.now()
-                 tiempo_vivido = fecha_actual - record.f_nac
-                 record.edad = tiempo_vivido.year
+                 fecha_actual = datetime.datetime.now().year
+                 tiempo_vivido = fecha_actual - record.f_nac.year
+                 record.edad = tiempo_vivido
                  
      @api.depends('f_nac')
      def _calcular_chinada(self):

@@ -18,7 +18,7 @@ Este módulo extiende el modelo res_partner añadiendo 3 campos
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','contacs'],
+    'depends': ['base','contacts'],
 
     # always loaded
     'data': [
