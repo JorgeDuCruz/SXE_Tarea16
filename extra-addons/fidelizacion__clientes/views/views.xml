@@ -19,6 +19,22 @@
     </record>
 
 
+           <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="fidelizacion__clientes.list">
+      <field name="name">fidelizacion__clientes list</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref = "base.view_partner_tree"/>
+      <field name="arch" type="xml">
+          <xpath expr ="//list/field[@name='phone']" position="before">
+              <field name="nvl_fid" string = "Nivel de Fidelidad"/>
+          </xpath>
+          <xpath expr ="//list/field[@name='nvl_fid']" position="attributes">
+              <attribute name="decoration-info">nvl_fid in ('Gold','Premium')</attribute>
+          </xpath>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
 <!--
     <record model="ir.actions.act_window" id="fidelizacion__clientes.action_window">
