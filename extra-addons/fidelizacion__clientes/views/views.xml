@@ -35,6 +35,20 @@
       </field>
     </record>
 
+
+          <!-- explicit kanban view definition -->
+
+    <record model="ir.ui.view" id="fidelizacion__clientes.kanban">
+      <field name="name">fidelizacion__clientes kanban</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref = "base.res_partner_kanban_view"/>
+      <field name="arch" type="xml">
+          <xpath expr ="//div[@class='mb-1']/field[@name='display_name']" position="after">
+              <br/>
+              <b><field name="nvl_fid"/></b>
+          </xpath>
+      </field>
+    </record>
     <!-- actions opening views on models -->
 <!--
     <record model="ir.actions.act_window" id="fidelizacion__clientes.action_window">
